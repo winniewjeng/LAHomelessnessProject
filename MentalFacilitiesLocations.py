@@ -44,30 +44,7 @@ for location in addresses:
     print("Latitude:%s\nLongitude:%s\nFormatted Address:%s" % (latitude, longitude, formatted_address))
     # storing things inside the geoLocations dictionary
 
-    # make the request with exponential backoff:
+    # make the request with exponential-backoff:
     time.sleep(0.1)
 
-
-# #
-# location = addresses[33]
-# print(location + '\n')
-# # building the url
-# URL = URL + location + "&key=" + api
-# # sending get request and saving the response as response object
-# r = requests.get(url=URL)
-# # extracting data in json format
-# data = r.json()
-# pprint.pprint(data)  # print the data in terminal
-# # extracting latitude, longitude and formatted address of the first matching location
-# formatted_address = data['results'][0]['formatted_address']
-# latitude = data['results'][0]['geometry']['location']['lat']
-# longitude = data['results'][0]['geometry']['location']['lng']
-# # printing the output
-# print("Latitude:%s\nLongitude:%s\nFormatted Address:%s" % (latitude, longitude, formatted_address))
-# # storing things inside the geoLocations dictionary
-#
-#
-#
-
-
-
+# https://stackoverflow.com/questions/28650264/script-for-creating-dictionary-from-coordinates
