@@ -1,0 +1,21 @@
+LA Homeless Shelters and Services
+https://hub.arcgis.com/datasets/lacounty::homeless-shelters-and-services?geometry=-144.212%2C12.085%2C108.913%2C59.11
+
+Homeless Count by Council District - 2017
+https://hub.arcgis.com/datasets/lahub::homeless-count-by-council-district-2017/data
+Homeless Count by Council District - 2018
+https://hub.arcgis.com/datasets/lahub::homeless-count-by-council-district-2018/data
+
+LA Parks
+https://hub.arcgis.com/datasets/lahub::parks
+
+LA Publicly Funded Mental Health Service Provider Locations
+http://egis3.lacounty.gov/dataportal/2016/02/23/publicly-funded-mental-health-providers/
+
+Google Maps API
+AIzaSyAR3HB-9_hwcW9Qxb0OCNWmWl6qbIbONjM
+
+cd
+nano .bash_profile
+export GOOGLE_API_KEY="AIzaSyAR3HB-9_hwcW9Qxb0OCNWmWl6qbIbONjM"
+import os in python module
