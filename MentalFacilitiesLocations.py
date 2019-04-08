@@ -10,6 +10,7 @@ from pandas import ExcelFile
 import numpy as np
 
 addresses = []
+names = []
 
 file = r'Mental Health Service Providers January 2016.xlsx'
 df = pd.read_excel(file)
@@ -18,6 +19,7 @@ rows_len = len(df)
 i = 0
 while i != rows_len:
     addresses.append(df['Address'][i] + ', ' + df['City'][i])
+    names.append(df['Provider Name'][i])
     # print(addresses[i])  # check
     # print(df['Address'][i] + ', ' + df['City'][i] +'\n')  # double-check
     i = i + 1
@@ -26,7 +28,7 @@ while i != rows_len:
 geoLocations = {}
 lat = []
 lon = []
-
+j = 0
 # api call to get the coordinates
 for location in addresses:
     # print(location + '\n')
@@ -48,8 +50,9 @@ for location in addresses:
     lat.append(latitude)
     lon.append(longitude)
     # printing the output
-    print("Formatted Address:%s\nLatitude:%s\nLongitude:%s" % (formatted_address, latitude, longitude))
+    print("Formatted Address:%s\nLatitude:%s\nLongitude:%s\nName:%s" % (formatted_address, latitude, longitude, names[j]))
     # storing things inside the geoLocations dictionary
+    j = j + 1
 
     # make the request with exponential-backoff:
     time.sleep(0.05)
@@ -57,13 +60,9 @@ for location in addresses:
 
 print('\nparsing completed')
 
-# print(lat)
-# print(lon)
-
-# df = pd.DataFrame({'lat': lat,
-#                    'long': [3, 5, 6, 2, 4, 6, 7, 8, 7, 8, 9]})
 df = pd.DataFrame({'lat': lat,
-                   'long': lon})
-writer = ExcelWriter('Lat_Long_Mental_Health_Service_Provider.xlsx')
+                   'long': lon,
+                   'name:': names})
+writer = ExcelWriter('Lat_Long_Mental_Health_Service_Provider_1.xlsx')
 df.to_excel(writer, 'Sheet1', index=False)
 writer.save()

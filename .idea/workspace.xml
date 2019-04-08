@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cd14250-d118-4564-92c1-a083276748bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MentalFacilitiesLocations.py" beforeDir="false" afterPath="$PROJECT_DIR$/MentalFacilitiesLocations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mental_Health_Service_Providers_2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Mental_Health_Service_Providers_2016.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gis11_final_src.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gis11_final_src.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MentalFacilitiesLocations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+            <state relative-caret-position="515">
+              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
               <folding>
                 <element signature="e#33#48#0" expanded="true" />
               </folding>
@@ -145,7 +142,7 @@
     <frame x="32" y="23" width="1400" height="756" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.103698336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -167,8 +164,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/MentalFacilitiesLocations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+        <state relative-caret-position="515">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
           <folding>
             <element signature="e#33#48#0" expanded="true" />
           </folding>
