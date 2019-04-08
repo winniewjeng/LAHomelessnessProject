@@ -11,6 +11,7 @@ import numpy as np
 
 addresses = []
 names = []
+cities = []
 
 file = r'Mental Health Service Providers January 2016.xlsx'
 df = pd.read_excel(file)
@@ -19,6 +20,7 @@ rows_len = len(df)
 i = 0
 while i != rows_len:
     addresses.append(df['Address'][i] + ', ' + df['City'][i])
+    cities.append(df['City'][i])
     names.append(df['Provider Name'][i])
     # print(addresses[i])  # check
     # print(df['Address'][i] + ', ' + df['City'][i] +'\n')  # double-check
@@ -62,6 +64,7 @@ print('\nparsing completed')
 
 df = pd.DataFrame({'lat': lat,
                    'long': lon,
+                   'city': cities,
                    'name:': names})
 writer = ExcelWriter('Lat_Long_Mental_Health_Service_Provider_1.xlsx')
 df.to_excel(writer, 'Sheet1', index=False)
