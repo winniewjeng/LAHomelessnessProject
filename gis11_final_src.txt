@@ -20,4 +20,8 @@ nano .bash_profile
 export GOOGLE_API_KEY="  "
 import os in python module
 
+United States Department of Housing and Urban Development
 https://learn.arcgis.com/en/projects/homeless-in-the-badlands/lessons/download-homelessness-data.htm
+
+2018 PIT Estimate of Veteran Homelessness in the U.S.
+https://www.hudexchange.info/resource/5772/2018-pit-estimate-of-veteran-homelessness-in-the-us/

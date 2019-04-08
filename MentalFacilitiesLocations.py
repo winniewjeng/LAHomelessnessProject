@@ -1,28 +1,33 @@
 # importing the requests library
 import requests
 import os
-import csv
 import pprint
 import time
+import matplotlib.pyplot as plt
+import pandas as pd
+from pandas import ExcelWriter
+from pandas import ExcelFile
+import numpy as np
 
 addresses = []
-f = open('Mental_Health_Service_Providers_2016.csv')
-csv_f = csv.reader(f)
 
-for row in csv_f:
-    address = row[2] + ', ' + row[3]
-    addresses.append(address)
-    # print(row[2]+' '+row[3])
+file = r'Mental Health Service Providers January 2016.xlsx'
+df = pd.read_excel(file)
 
+rows_len = len(df)
+i = 0
+while i != rows_len:
+    addresses.append(df['Address'][i] + ', ' + df['City'][i])
+    # print(addresses[i])  # check
+    # print(df['Address'][i] + ', ' + df['City'][i] +'\n')  # double-check
+    i = i + 1
 
 # dictionary of address and lat and long
 geoLocations = {}
 lat = []
 lon = []
 
-del addresses[0]
-
-
+# api call to get the coordinates
 for location in addresses:
     # print(location + '\n')
     # api-endpoint
@@ -40,11 +45,25 @@ for location in addresses:
     formatted_address = data['results'][0]['formatted_address']
     latitude = data['results'][0]['geometry']['location']['lat']
     longitude = data['results'][0]['geometry']['location']['lng']
+    lat.append(latitude)
+    lon.append(longitude)
     # printing the output
-    print("Latitude:%s\nLongitude:%s\nFormatted Address:%s" % (latitude, longitude, formatted_address))
+    print("Formatted Address:%s\nLatitude:%s\nLongitude:%s" % (formatted_address, latitude, longitude))
     # storing things inside the geoLocations dictionary
 
     # make the request with exponential-backoff:
-    time.sleep(0.1)
+    time.sleep(0.05)
+    # https://stackoverflow.com/questions/28650264/script-for-creating-dictionary-from-coordinates
 
-# https://stackoverflow.com/questions/28650264/script-for-creating-dictionary-from-coordinates
+print('\nparsing completed')
+
+# print(lat)
+# print(lon)
+
+# df = pd.DataFrame({'lat': lat,
+#                    'long': [3, 5, 6, 2, 4, 6, 7, 8, 7, 8, 9]})
+df = pd.DataFrame({'lat': lat,
+                   'long': lon})
+writer = ExcelWriter('Lat_Long_Mental_Health_Service_Provider.xlsx')
+df.to_excel(writer, 'Sheet1', index=False)
+writer.save()
